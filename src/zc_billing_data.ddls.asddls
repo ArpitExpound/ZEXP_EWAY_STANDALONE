@@ -152,7 +152,7 @@ as select from I_BillingDocument              as a
     pl.PlantName,
     bupla.BusinessPlace,
     taxdet.IN_GSTIdentificationNumber as bupla_gstin,
-    f.YY1_VehicleNo2_BDH,
+    f.YY1_VehicleNo_BDH,
     f.YY1_VehicleType_BDH,
     b.ReferenceSDDocument,
     b.ReferenceSDDocumentCategory

@@ -63,7 +63,7 @@ CLASS lhc_ZI_BILLING_EWB_ST IMPLEMENTATION.
 
     TYPES: BEGIN OF ty_msg,
              typ(1)   TYPE c,
-             vbeln    TYPE zchar10,
+             vbeln    TYPE zchar,
              msg(100) TYPE c,
            END OF ty_msg.
 
@@ -149,7 +149,7 @@ CLASS lhc_ZI_BILLING_EWB_ST IMPLEMENTATION.
 
     TYPES: BEGIN OF ty_msg,
              typ(1)   TYPE c,
-             vbeln    TYPE zchar10,
+             vbeln    TYPE zchar,
              msg(100) TYPE c,
            END OF ty_msg.
 

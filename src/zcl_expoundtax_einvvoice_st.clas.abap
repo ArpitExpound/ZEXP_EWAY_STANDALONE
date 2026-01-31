@@ -97,18 +97,18 @@ CLASS zcl_expoundtax_einvvoice_st DEFINITION
     DATA: lv_vbeln(10) TYPE c.
 
     METHODS:
-      create_eway_with_irn IMPORTING im_vbeln TYPE zchar10,
-      create_eway_without_irn IMPORTING im_vbeln TYPE zchar10.
+      create_eway_with_irn IMPORTING im_vbeln TYPE zchar,
+      create_eway_without_irn IMPORTING im_vbeln TYPE zchar.
 
     METHODS: generate_eway1
-      IMPORTING im_vbeln       TYPE zchar10
+      IMPORTING im_vbeln       TYPE zchar
       EXPORTING ex_response    TYPE string
                 ex_status      TYPE c
                 es_error_log   TYPE ztsd_ew_log
                 es_ew_ewaybill TYPE zew_ewaybill.
 
     METHODS: cancel_eway
-      IMPORTING im_vbeln       TYPE zchar10
+      IMPORTING im_vbeln       TYPE zchar
       EXPORTING ex_response    TYPE string
                 ex_status      TYPE c
                 es_error_log   TYPE ztsd_ew_log
@@ -426,7 +426,7 @@ CLASS ZCL_EXPOUNDTAX_EINVVOICE_ST IMPLEMENTATION.
       ELSE.
         CLEAR :  wa_data1-transdocdate.
       ENDIF.
-      wa_data1-vehicleno         = w_irn1-YY1_VehicleNo2_BDH.
+      wa_data1-vehicleno         = w_irn1-YY1_VehicleNo_BDH.
       wa_data1-vehicletype       = w_irn1-YY1_VehicleType_BDH.
       IF wa_data1-vehicletype+0(1) = 'R'.
         wa_data1-transmode = '1'.
