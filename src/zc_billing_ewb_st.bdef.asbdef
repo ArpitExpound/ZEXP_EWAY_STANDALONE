@@ -1,0 +1,21 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_BILLING_EWB_ST //alias <alias_name>
+{
+  use update;
+
+  use action CreateEWB;
+  use action CIRN;
+//  use association _transdtls { create; }
+
+}
+
+//define behavior for ZC_EWB_TRANS_DTLS_ST //alias <alias_name>
+//{
+//
+//  use update;
+//  use delete;
+//
+//  use association _BILLINGEWB;
+//}

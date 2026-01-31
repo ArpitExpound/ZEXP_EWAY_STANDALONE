@@ -1,0 +1,4 @@
+@EndUserText.label: 'E-WAY bill standalone'
+define service ZSD_EWAY_STD {
+  expose ZC_BILLING_EWB_ST;
+}

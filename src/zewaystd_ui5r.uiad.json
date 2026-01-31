@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "E-Way Bill Generation ( Standalone )"
+  },
+  "ui5AppDetails": {
+    "appId": "zewaystd"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_8A2C6BF10AD8C702DE43D90096F4615E4390CB57_TM",
+    "semanticObject": "zexpstd",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_8A2C6BF10AD8C702DE43D90096F4615E4390CB57_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "E-Way Bill Generation ( Standalone )"
+      }
+    }
+  ]
+}

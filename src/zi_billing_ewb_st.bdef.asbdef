@@ -1,0 +1,55 @@
+managed implementation in class zbp_i_billing_ewb_st unique;
+strict ( 2 );
+
+define behavior for ZI_BILLING_EWB_ST //alias <alias_name>
+//persistent table <???>
+with unmanaged save
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+//  create ( authorization : global );
+  update;
+  action ( features : instance ) CreateEWB result [1] $self;
+  action ( features : instance ) CIRN result [1] $self;
+  field ( readonly ) BillingDocument;
+//  ,BillingDocumentDate,BillingDocumentType,CompanyCode
+//  ,Criticality,DistributionChannel,EbillNo,EinvJson,Irn,IrnStatus,IrnStatus1,LogStatus,
+//  msg,SoldToParty,Status,VdFmDate,VdFmTime,VdToDate,VdToTime ;
+//  , Irn, IrnStatus, BillingDocumentDate, DistributionChannel,
+//  EbillNo, Status, VdFmDate, VdFmTime, VdToDate, VdToTime, msg;
+//  association _transdtls { create; }
+//  delete;
+//  field ( readonly ) BillingDocument;
+//  association _transdtls { create; }
+}
+
+//define behavior for ZI_EWB_TRANS_DET_ST1 //alias <alias_name>
+////persistent table <???>
+//persistent table ztsd_ewb_dtls_st
+//lock dependent by _BILLINGEWB
+//authorization master ( instance )
+////authorization dependent by _BILLINGEWB
+////etag master <field_name>
+//{
+//  update;
+//  delete;
+//  field ( readonly ) Bukrs, DocNo, doc_year, Doc_Type;
+//  association _BILLINGEWB;
+//
+//   mapping for ztsd_ewb_dtls_st
+//    {
+//      docno      = docno;
+//      doc_year   = doc_year;
+//      doc_type   = doc_type;
+//      bukrs      = bukrs;
+//      TransDocNo = transdocno;
+//      TransMd    = trans_mode;
+//      TransId    = trans_id;
+//      TransNm    = trans_nm;
+//      Distance   = distance;
+//      TransDt    = transdt;
+//      VehNo      = vehno;
+//      VehType    = vehtype;
+//    }
+//}

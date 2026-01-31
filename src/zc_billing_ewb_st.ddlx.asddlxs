@@ -1,0 +1,111 @@
+@Metadata.layer: #CORE
+@UI.headerInfo:{
+    typeName: 'E-Way Bill Generation : ExpoundTax',
+    typeNamePlural: 'E-Way Bill Generation : ExpoundTax',
+    title:{ value: 'BillingDocument' }, description:{ value: 'BillingDocument' }
+  }
+annotate entity ZC_BILLING_EWB_ST with 
+{ 
+ @UI.facet: [
+
+    {
+   id : 'Header',
+   purpose: #STANDARD,
+   type: #IDENTIFICATION_REFERENCE,
+   label: 'E-Way Bill Header',
+   position: 10
+    }
+//    {
+//   id : 'Item',
+//   purpose: #STANDARD,
+//   type: #LINEITEM_REFERENCE,
+//   label: 'Transporter Details',
+//   position: 20,
+//   targetElement: '_transdtls'
+//    } 
+    ]
+
+  /* @UI: { lineItem:[{ position: 10 }],
+    identification: [{ position: 10 }],
+    selectionField: [{ position: 10 }] }
+    CompanyCode;
+  */
+  @UI: { lineItem: [ { position: 10 },
+  { type: #FOR_ACTION, dataAction: 'CreateEWB', label: 'Create E-Way Bill Both A&B', invocationGrouping: #CHANGE_SET },
+    { type: #FOR_ACTION, dataAction: 'CIRN', label: 'Cancel E-Way Bill', invocationGrouping: #CHANGE_SET } ] }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_BillingDocument', element: 'BillingDocument' } }]
+  BillingDocument;
+
+/*  @UI: { lineItem:[{ position: 20 }],
+  identification: [{ position: 20 }],
+  selectionField: [{ position: 20 }] }
+  @EndUserText.label: 'Status'
+  Criticality;
+*/
+
+  @UI.dataPoint: { qualifier: 'IrnStatus', title: 'Status' }
+  @EndUserText.label: 'E-Waybill Status'
+  @UI: { lineItem:[{ position: 9, criticality: 'Criticality', importance: #HIGH }],
+    selectionField: [{ position: 9 }] }
+  @Search.defaultSearchElement: true
+  IrnStatus1;
+//
+  @UI: { lineItem:[{ position: 40 }],
+  identification: [{ position: 40 }],
+  selectionField: [{ position: 40 }] }
+  @EndUserText.label: 'Company Code'
+  CompanyCode;
+
+/*
+  @UI: { lineItem:[{ position: 50 }],
+  identification: [{ position: 50 }],
+  selectionField: [{ position: 50 }] }
+  IrnStatus;
+  */
+
+  @UI: { lineItem:[{ position: 60 }],
+  identification: [{ position: 60 }],
+  selectionField: [{ position: 60 }] }
+  @EndUserText.label: 'E-Way Bill No.'
+  EbillNo;
+
+/*
+  @UI: { lineItem:[{ position: 70 }],
+  identification: [{ position: 70 }],
+  selectionField: [{ position: 70 }] }
+  Status;
+*/
+
+  @UI: { lineItem:[{ position: 80 }],
+  identification: [{ position: 80 }],
+  selectionField: [{ position: 80 }] }
+  VdFmDate;
+
+  @UI: { lineItem: [{ position: 90 }],
+  identification:  [{ position: 90 }],
+  selectionField:  [{ position: 90 }] }
+  VdFmTime;
+
+  @UI: { lineItem:[{ position: 100 }],
+  identification: [{ position: 100 }],
+  selectionField: [{ position: 100 }] }
+  VdToDate;
+
+  @UI: { lineItem: [{ position: 110 }],
+  identification:  [{ position: 110 }],
+  selectionField:  [{ position: 110 }] }
+  VdToTime;
+
+  @UI: { lineItem: [{ position: 120 }],
+  identification:  [{ position: 120 }],
+  selectionField:  [{ position: 120 }] }
+  @EndUserText.label: 'Log Status'
+  LogStatus;
+
+  @EndUserText.label: 'Response'
+  @UI: { //lineItem:[{ position: 120 }],
+  identification: [{ position: 130 }] }
+  //  selectionField: [{ position: 130 }] }
+  MSG;
+
+}         
